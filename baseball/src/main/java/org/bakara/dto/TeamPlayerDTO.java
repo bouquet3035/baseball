@@ -12,7 +12,7 @@ public class TeamPlayerDTO {
 	private String playerName;
 	private String teamName;
 	private String position;
-	private Date birthday;
+	private String birthday;
 	private String hnW;
 	private String school;
 
