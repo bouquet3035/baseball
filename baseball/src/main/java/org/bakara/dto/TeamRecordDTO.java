@@ -23,9 +23,9 @@ public class TeamRecordDTO {
 	int ifb; 
 	int so ; 
 	int doubleout ;
-	int avg; 
-	int obp;
-	int sig ; 
-	int ops; 
+	Long avg; 
+	Long obp;
+	Long sig ; 
+	Long ops; 
 	
 }

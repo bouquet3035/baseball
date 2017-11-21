@@ -1,5 +1,7 @@
 package org.bakara.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.bakara.dto.TeamRecordDTO;
@@ -12,8 +14,10 @@ public class TeamRecordServiceImpl implements TeamRecordService {
 	private TeamRecordMapper mapper; 
 
 	@Override  
-	public void teamRecord(TeamRecordDTO dto) {
+	public List<TeamRecordDTO> teamRecord() {
 		// TODO Auto-generated method stub
-		mapper.teamRecord(dto); 
+		return mapper.teamRecord(); 
 	}
+
+
 }

@@ -33,14 +33,15 @@ public class testController {
 		
 	}
 	
-	@GetMapping("/todaygame")
+	@GetMapping("/todaygame") 
 	public void todaygame () {
 		
 	}
 	
 	
 	@GetMapping("/teamdetail")
-	public void teamdetail () {
+	public void teamdetail (Model model) {
+		model.addAttribute("teamrecord",TeamRecordService.teamRecord()) ; 
 	
 	}
 

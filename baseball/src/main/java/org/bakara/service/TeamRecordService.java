@@ -1,7 +1,9 @@
 package org.bakara.service;
 
+import java.util.List;
+
 import org.bakara.dto.TeamRecordDTO;
 
 public interface TeamRecordService {
-	public void teamRecord(TeamRecordDTO dto) ;   //ÆÀ ±â·Ï 
+	public List<TeamRecordDTO> teamRecord() ;   //ÆÀ ±â·Ï 
 }
