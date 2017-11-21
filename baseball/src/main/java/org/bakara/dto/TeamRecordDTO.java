@@ -3,7 +3,7 @@ package org.bakara.dto;
 import lombok.Data;
 
 @Data
-public class TeamPlayerRecordDTO {
+public class TeamRecordDTO {
 	String teamname ; 
 	Long war ; 
 	int game; 

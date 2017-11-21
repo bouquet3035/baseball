@@ -3,6 +3,7 @@ package org.bakara.service;
 import javax.inject.Inject;
 
 import org.bakara.dto.TeamPlayerDTO;
+import org.bakara.dto.TeamRecordDTO;
 import org.bakara.mapper.TeamPlayerMapper;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +18,7 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 		
 		mapper.registerTeamPlayer(dto);
 	}
+
+
 
 }
