@@ -14,8 +14,8 @@
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
 		<property name="url"
 			value="jdbc:log4jdbc:mysql://192.168.0.38/baseball?useSSL=false"></property>
-		<property name="username" value="bakara"></property>
-		<property name="password" value="bakara"></property>
+		<property name="username" value="baraka"></property>
+		<property name="password" value="baraka"></property>
 	</bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
