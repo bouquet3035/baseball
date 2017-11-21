@@ -4,7 +4,8 @@ import javax.inject.Inject;
 
 import org.bakara.dto.TeamRecordDTO;
 import org.bakara.mapper.TeamRecordMapper;
-
+import org.springframework.stereotype.Service;
+@Service
 public class TeamRecordServiceImpl implements TeamRecordService {
 	
 	@Inject
