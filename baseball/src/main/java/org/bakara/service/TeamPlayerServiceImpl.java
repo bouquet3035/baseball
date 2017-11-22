@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.bakara.dto.PlayerBasicDTO;
 import org.bakara.dto.TeamPlayerDTO;
 import org.bakara.dto.TeamRecordDTO;
 import org.bakara.mapper.TeamPlayerMapper;
@@ -86,11 +87,14 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 
 		for (int i = 0; i < playerPage.size(); i++) {
 			TeamPlayerDTO dto = new TeamPlayerDTO();
+			PlayerBasicDTO PBdto = new PlayerBasicDTO();
 
 			driver.get(playerPage.get(i));
 			Thread.sleep(1000);
 
 			dto.setPlayerImg(driver.findElement(By.id("cphContents_cphContents_cphContents_playerProfile_imgProgile"))
+					.getAttribute("src"));
+			PBdto.setPlayerImg(driver.findElement(By.id("cphContents_cphContents_cphContents_playerProfile_imgProgile"))
 					.getAttribute("src"));
 			List<WebElement> playerBasics = driver.findElement(By.className("player_basic"))
 					.findElements(By.tagName("span"));
@@ -98,10 +102,23 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 			// log.info(playerBasics.get(0).getText());
 			// log.info("" + Long.parseLong(playerBasics.get(1).getText()));
 			dto.setPlayerName(playerBasics.get(0).getText());
+			PBdto.setPlayerName(playerBasics.get(0).getText());
+			
 			dto.setPlayerNum(Long.parseLong(playerBasics.get(1).getText()));
+			PBdto.setPlayerNum(Long.parseLong(playerBasics.get(1).getText()));
 
 			mapper.registerPlayerImg(dto);
-
+			
+			PBdto.setBirthday(playerBasics.get(2).getText());
+			PBdto.setPosition(playerBasics.get(3).getText());
+			PBdto.setHnW(playerBasics.get(4).getText());
+			PBdto.setSchool(playerBasics.get(5).getText());
+			PBdto.setInitPayment(playerBasics.get(6).getText());
+			PBdto.setSalary(playerBasics.get(7).getText());
+			PBdto.setPickUpRank(playerBasics.get(8).getText());
+			PBdto.setJoined(playerBasics.get(9).getText());
+			
+			
 		}
 
 	}
