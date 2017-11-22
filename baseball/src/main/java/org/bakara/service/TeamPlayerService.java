@@ -1,9 +1,10 @@
 package org.bakara.service;
 
 import org.bakara.dto.TeamPlayerDTO;
+import org.bakara.dto.TeamRecordDTO;
 
 public interface TeamPlayerService {
 	
-	public void crawlTeamPlayer(TeamPlayerDTO dto);
+	public void crawlPlayersInfo() throws Exception;
 
 }
