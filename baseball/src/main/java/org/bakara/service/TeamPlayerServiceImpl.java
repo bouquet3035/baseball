@@ -1,5 +1,7 @@
 package org.bakara.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.bakara.dto.TeamPlayerDTO;
@@ -17,6 +19,11 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 	public void crawlTeamPlayer(TeamPlayerDTO dto) {
 		
 		mapper.registerTeamPlayer(dto);
+	}
+
+	@Override
+	public List<TeamPlayerDTO> selectTeamPlayer() {
+		return mapper.selectTeamPlayer(); 
 	}
 
 

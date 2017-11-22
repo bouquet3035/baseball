@@ -87,6 +87,7 @@
    </main1>
    
    
+<<<<<<< HEAD
     <main2><h3>팀 관련 뉴스</h3>
     <div class="div" id="teamnews">
 				<ul>
@@ -95,6 +96,43 @@
     </div>
     </main2>
     <main3><h3>선수</h3><div class="div"></div></main3>
+=======
+    <main2><h3>팀 관련 뉴스</h3><div class="div"></div></main2>
+    <main3><h3>선수</h3>
+    <div class="teamplayer">
+    	
+        		<table>
+        		<tr>
+        		<td><h3>등번호</h3></td>
+        		<td><h3>선수명</h3></td>
+        		<td><h3>팀명</h3></td>
+        		<td><h3>포지션</h3></td>
+        		<td><h3>생년월일</h3></td>
+        		<td><h3>체격</h3></td>
+        		<td><h3>출신교</h3></td>
+        	
+        		</tr>
+        		
+        		<c:forEach var="selectTeamPlayer" items="${selectTeamPlayer}"> 
+				<tr>
+					<td><h3>${selectTeamPlayer.playerNum}</h3></td>
+					<td><h3>${selectTeamPlayer.playerName}</h3></td>	
+					<td><h3>${selectTeamPlayer.teamName}</h3></td>
+					<td><h3>${selectTeamPlayer.position}</h3></td>
+					<td><h3>${selectTeamPlayer.birthday}</h3></td>
+					<td><h3>${selectTeamPlayer.hnW}</h3></td>
+					<td><h3>${selectTeamPlayer.school}</h3></td>
+
+					
+					
+	
+				</tr>
+				</c:forEach>
+				</table>		
+       </div>
+    
+    </main3>
+>>>>>>> branch 'master' of https://github.com/bouquet3035/baseball
 
     <footer>Footer</footer>
 </section>
@@ -225,7 +263,7 @@ $(document).ready(function(){
         margin: 20px;
         border: 5px solid #D42E22;
         padding: 10%;
-         background-color: rgba( 255, 255, 255, 0.5 );
+        background-color: rgba( 255, 255, 255, 0.5 );
     }
     .teamrecord {
 
@@ -233,6 +271,13 @@ $(document).ready(function(){
         border: 5px solid #477FD6;
         padding: 1px;
         background-color: #C8DAF2;
+    }
+     .teamplayer {
+
+        margin: 1px;
+        border: 5px solid #477FD6;
+        padding: 1px;
+        background-color: rgba( 255, 255, 255, 0.5 );
     }
     
 

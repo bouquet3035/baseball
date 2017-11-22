@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class testController {
 	
 	@Autowired()
-	private TeamPlayerService service;
+	private TeamPlayerService TeamPlayerService;
 	
 	@Autowired() 
 	private TeamRecordService TeamRecordService;
@@ -52,8 +52,10 @@ public class testController {
 	
 	@GetMapping("/teamdetail")
 	public void teamdetail (Model model) {
-		model.addAttribute("teamrecord",TeamRecordService.teamRecord());
-		
+
+		model.addAttribute("teamrecord",TeamRecordService.teamRecord()) ; 
+		model.addAttribute("selectTeamPlayer",TeamPlayerService.selectTeamPlayer()) ; 
+
 	}
 
 
