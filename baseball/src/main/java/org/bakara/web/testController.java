@@ -3,6 +3,7 @@ package org.bakara.web;
 import java.util.List;
 
 import org.bakara.dto.TeamNewsDTO;
+import org.bakara.dto.TeamRankDTO;
 import org.bakara.dto.TeamRecordDTO;
 import org.bakara.service.TeamNewsService;
 import org.bakara.service.TeamPlayerService;
@@ -31,12 +32,23 @@ public class testController {
 	@Autowired() 
 	private TeamRecordService TeamRecordService;
 	
-	@Autowired TeamRankService TeamRankService ; 
-	@Autowired TeamNewsService TeamNewsService;
+	@Autowired 
+	private TeamRankService TeamRankService ; 
+	@Autowired 
+	private TeamNewsService TeamNewsService;
 	
 	@GetMapping("/teaminfo")  // ���� : ������ teamRank ���������ѷ��ִ°� ������ �����Ͷ� t
 	public void teaminfo (Model model) {
-		model.addAttribute("teamrank",TeamRankService.teamRank()) ;
+		
+	}
+	
+	
+	@GetMapping("/teaminfo1")
+	@ResponseBody
+	public List<TeamRankDTO> teaminfo1(){
+		
+		return TeamRankService.teamRank() ; 
+		
 	}
 	
 	@GetMapping("/game")
