@@ -2,6 +2,7 @@ package org.bakara.web;
 
 import org.bakara.dto.TeamRecordDTO;
 import org.bakara.service.TeamPlayerService;
+import org.bakara.service.TeamRankService;
 import org.bakara.service.TeamRecordService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,13 @@ public class testController {
 	private TeamPlayerService service;
 	
 	@Autowired() 
-	private TeamRecordService TeamRecordService; 
+	private TeamRecordService TeamRecordService;
 	
-	@GetMapping("/teaminfo")
-	public void teaminfo () {
-		
+	@Autowired TeamRankService TeamRankService ; 
+	
+	@GetMapping("/teaminfo")  // «ı¡÷ : ∆¿º¯¿ß teamRank ∆¿¡§∫∏ø°ª—∑¡¡÷¥¬∞‘ ∆¿º¯¿ß µ•¿Ã≈Õ∂Ûº≠ t
+	public void teaminfo (Model model) {
+		model.addAttribute("teamrank",TeamRankService.teamRank()) ;
 	}
 	
 	@GetMapping("/game")
@@ -42,7 +45,6 @@ public class testController {
 	@GetMapping("/teamdetail")
 	public void teamdetail (Model model) {
 		model.addAttribute("teamrecord",TeamRecordService.teamRecord()) ; 
-	
 	}
 
 

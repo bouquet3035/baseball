@@ -1,53 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <section id="page">
     <header>Header
 
-        <button class="menu">¹öÆ°</button>
+        <button class="menu">ë²„íŠ¼</button>
 
     </header>
    <main0>
        <div class="menu1"><h1>btn</h1></div>
-       <h3>¼±¼ö ¸í´Ü</h3><div class="div">
+       <h3>ì„ ìˆ˜ ëª…ë‹¨</h3><div class="div">
 		
    </div>
    </main0>
     <main1>
-        <h3>ÆÀ ±â·Ï</h3>
+        <h3>íŒ€ ê¸°ë¡</h3>
         <div class="teamrecord">
         		<table>
         		<tr>
-        		<td><h3>ÆÀÀÌ¸§</h3></td>
+        		<td><h3>íŒ€ì´ë¦„</h3></td>
         		<td><h3>WAR</h3></td>
         		<td><h3>G</h3></td>
-        		<td><h3>Å¸¼®</h3></td>
-        		<td><h3>Å¸¼ö</h3></td>
-        		<td><h3>µæÁ¡</h3></td>
-        		<td><h3>¾ÈÅ¸</h3></td>
-        		<td><h3>ÀÌÅ¸</h3></td>
-        		<td><h3>»ïÅ¸</h3></td>
-        		<td><h3>È¨·±</h3></td>
-        		<td><h3>·çÅ¸</h3></td>
-        		<td><h3>Å¸Á¡</h3></td>
-        		<td><h3>µµ·ç</h3></td>
-        		<td><h3>µµ½Ç</h3></td>
-        		<td><h3>º¼³Ý</h3></td>
-        		<td><h3>»ç±¸</h3></td>
-        		<td><h3>°í»ç</h3></td>
-        		<td><h3>»ïÁø</h3></td>
-        		<td><h3>º´»ì</h3></td>
-        		<td><h3>Å¸À²</h3></td>
-        		<td><h3>ÃâÅõÀ²</h3></td>
-        		<td><h3>ÀåÅ¸À²</h3></td>
+        		<td><h3>íƒ€ì„</h3></td>
+        		<td><h3>íƒ€ìˆ˜</h3></td>
+        		<td><h3>ë“ì </h3></td>
+        		<td><h3>ì•ˆíƒ€</h3></td>
+        		<td><h3>ì´íƒ€</h3></td>
+        		<td><h3>ì‚¼íƒ€</h3></td>
+        		<td><h3>í™ˆëŸ°</h3></td>
+        		<td><h3>ë£¨íƒ€</h3></td>
+        		<td><h3>íƒ€ì </h3></td>
+        		<td><h3>ë„ë£¨</h3></td>
+        		<td><h3>ë„ì‹¤</h3></td>
+        		<td><h3>ë³¼ë„·</h3></td>
+        		<td><h3>ì‚¬êµ¬</h3></td>
+        		<td><h3>ê³ ì‚¬</h3></td>
+        		<td><h3>ì‚¼ì§„</h3></td>
+        		<td><h3>ë³‘ì‚´</h3></td>
+        		<td><h3>íƒ€ìœ¨</h3></td>
+        		<td><h3>ì¶œíˆ¬ìœ¨</h3></td>
+        		<td><h3>ìž¥íƒ€ìœ¨</h3></td>
         		<td><h3>OPS</h3></td>
         		
         		</tr>
@@ -87,8 +87,8 @@
    </main1>
    
    
-    <main2><h3>ÆÀ °ü·Ã ´º½º</h3><div class="div"></div></main2>
-    <main3><h3>¼±¼ö</h3><div class="div"></div></main3>
+    <main2><h3>íŒ€ ê´€ë ¨ ë‰´ìŠ¤</h3><div class="div"></div></main2>
+    <main3><h3>ì„ ìˆ˜</h3><div class="div"></div></main3>
 
     <footer>Footer</footer>
 </section>
