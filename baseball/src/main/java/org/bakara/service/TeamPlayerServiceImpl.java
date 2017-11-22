@@ -106,4 +106,9 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 
 	}
 
+	@Override
+	public List<TeamPlayerDTO> selectTeamPlayer() {
+		return mapper.selectTeamPlayer(); 
+	}
+
 }

@@ -1,6 +1,11 @@
 package org.bakara.mapper;
 
+<<<<<<< HEAD
 import org.apache.ibatis.annotations.Delete;
+=======
+import java.util.List;
+
+>>>>>>> branch 'master' of https://github.com/bouquet3035/baseball
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -20,7 +25,8 @@ public interface TeamPlayerMapper {
 	
 	@Delete("delete from tbl_teamplayer")
 	public void resetTeamPlayers();
-
-	
+	 
+	@Select("select * from tbl_teamplayer")  //선수 정보를 뿌려주기위한 
+	public List<TeamPlayerDTO> selectTeamPlayer() ; 
 		
 }
