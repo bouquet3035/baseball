@@ -1,6 +1,10 @@
 package org.bakara.web;
 
+import java.util.List;
+
+import org.bakara.dto.TeamNewsDTO;
 import org.bakara.dto.TeamRecordDTO;
+import org.bakara.service.TeamNewsService;
 import org.bakara.service.TeamPlayerService;
 import org.bakara.service.TeamRankService;
 import org.bakara.service.TeamRecordService;
@@ -11,11 +15,14 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @RequestMapping("/baseball/*")
-@Controller
 
+@Controller
 public class testController {
 	
 	@Autowired()
@@ -25,8 +32,9 @@ public class testController {
 	private TeamRecordService TeamRecordService;
 	
 	@Autowired TeamRankService TeamRankService ; 
+	@Autowired TeamNewsService TeamNewsService;
 	
-	@GetMapping("/teaminfo")  // ÇõÁÖ : ÆÀ¼øÀ§ teamRank ÆÀÁ¤º¸¿¡»Ñ·ÁÁÖ´Â°Ô ÆÀ¼øÀ§ µ¥ÀÌÅÍ¶ó¼­ t
+	@GetMapping("/teaminfo")  // ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ teamRank ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ·ï¿½ï¿½Ö´Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¶ï¿½ t
 	public void teaminfo (Model model) {
 		model.addAttribute("teamrank",TeamRankService.teamRank()) ;
 	}
@@ -44,8 +52,10 @@ public class testController {
 	
 	@GetMapping("/teamdetail")
 	public void teamdetail (Model model) {
+
 		model.addAttribute("teamrecord",TeamRecordService.teamRecord()) ; 
 		model.addAttribute("selectTeamPlayer",TeamPlayerService.selectTeamPlayer()) ; 
+
 	}
 
 
@@ -59,5 +69,15 @@ public class testController {
 	public void playerdetail () {
 		
 	}
+	
+	
+	@GetMapping("/teamdetail/{teamname}")
+	@ResponseBody
+	public List<TeamNewsDTO> getNews(@PathVariable("teamname") String teamname){
+		
+		return TeamNewsService.getNews(teamname);
+		
+	}
+	
 	
 }

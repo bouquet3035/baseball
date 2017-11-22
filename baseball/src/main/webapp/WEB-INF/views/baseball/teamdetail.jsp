@@ -54,7 +54,7 @@
         		
         		<c:forEach var="teamrecord" items="${teamrecord}"> 
 				<tr>
-					<td><h3>${teamrecord.teamname}</h3></td>
+					<td><h3 id="teamname">${teamrecord.teamname}</h3></td>
 					<td><h3>${teamrecord.war}</h3></td>
 					<td><h3>${teamrecord.game}</h3></td>
 					<td><h3>${teamrecord.hs}</h3></td>
@@ -87,6 +87,16 @@
    </main1>
    
    
+<<<<<<< HEAD
+    <main2><h3>팀 관련 뉴스</h3>
+    <div class="div" id="teamnews">
+				<ul>
+					
+				</ul>
+    </div>
+    </main2>
+    <main3><h3>선수</h3><div class="div"></div></main3>
+=======
     <main2><h3>팀 관련 뉴스</h3><div class="div"></div></main2>
     <main3><h3>선수</h3>
     <div class="teamplayer">
@@ -122,6 +132,7 @@
        </div>
     
     </main3>
+>>>>>>> branch 'master' of https://github.com/bouquet3035/baseball
 
     <footer>Footer</footer>
 </section>
@@ -152,6 +163,34 @@
     })
 
 
+
+</script>
+
+<script>
+
+$(document).ready(function(){
+	
+	var teamname = $("#teamname").text();
+	
+	console.log(teamname);
+	
+	function shownews() {
+		 var str = "";
+		 var url = "/baseball/teamdetail/"+teamname+"";
+		 console.log(url);
+		
+		 $.getJSON(url,function(arr){
+		 
+			for(var i = 0; i < arr.length; i++){
+								
+				str += "<li><a href='http://sports.news.naver.com/"+ arr[i].url +"' >"+arr[i].title +"</a></li>";
+						
+			}
+			$("#teamnews").html(str);
+			
+		 });
+	}shownews();
+});
 
 </script>
 
