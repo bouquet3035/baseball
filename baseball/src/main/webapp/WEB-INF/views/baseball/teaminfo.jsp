@@ -43,23 +43,15 @@
     
         		</tr>
         		
-        		<c:forEach var="teamrank" items="${teamrank}"> 
-				<tr>
-					<td><h3>${teamrank.rank}</h3></td>
-					<td><h3>${teamrank.teamname}</h3></td>
-					<td><h3>${teamrank.game}</h3></td>
-					<td><h3>${teamrank.victory}</h3></td>
-					<td><h3>${teamrank.lose}</h3></td>
-					<td><h3>${teamrank.draw}</h3></td>
-					<td><h3>${teamrank.gameodds}</h3></td>
-					<td><h3>${teamrank.gamecar}</h3></td>
-					<td><h3>${teamrank.recentgames}</h3></td>
-					<td><h3>${teamrank.continuity}</h3></td>
-					<td><h3>${teamrank.home}</h3></td>
-					<td><h3>${teamrank.visiting}</h3></td>
-								
+        		<tr>
+        		
+        		<div id="teamrank">
+				<ul>
+					
+				</ul>
+    			</div>
+        		
 				</tr>
-				</c:forEach>
 				</table>
         	
         	
@@ -83,6 +75,38 @@
         $(".menu1").hide();
     })
  </script>
+
+<script>
+
+$(document).ready(function(){
+	
+	function shownews() {
+		 var str = "";
+		 var url = "/baseball/teaminfo1"; 
+		
+		 $.getJSON(url,function(arr){
+		 
+			for(var i = 0; i < arr.length; i++){
+								
+				str += "<p><th>"+arr[i].rank +"</th>"
+				+"<a href='/baseball/teamdetail'><th>"+arr[i].teamName +"</th></a>"
+				+"<th>"+arr[i].game+arr[i].victory
+				+"<th>"+ arr[i].lose+ arr[i].draw
+				+"<th>"+arr[i].gameOdds
+				+"<th>"+arr[i].gameCar
+				+"<th>"+arr[i].recentGames
+				+"<th>"+arr[i].continuity
+				+"<th>"+arr[i].home+arr[i].visiting
+				+"</p>";
+						
+			}
+			$("#teamrank").html(str);
+			
+		 });
+	}shownews();
+});
+
+</script>
 
 <style>
 

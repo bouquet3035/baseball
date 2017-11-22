@@ -84,6 +84,7 @@
         </div>
    </main1>
    
+
     <main2><h3>팀 관련 뉴스</h3>
     <div class="div" id="teamnews">
 				<ul>
@@ -91,31 +92,32 @@
 				</ul>
     </div>
     </main2>
+
     
     <main3><h3>선수</h3>
     <div class="teamplayer">
     	
         		<table>
         		<tr>
-        		<td><h3>등번호</h3></td>
-        		<td><h3>선수명</h3></td>
-        		<td><h3>팀명</h3></td>
-        		<td><h3>포지션</h3></td>
-        		<td><h3>생년월일</h3></td>
-        		<td><h3>체격</h3></td>
-        		<td><h3>출신교</h3></td>
+        		<td><p>등번호</p></td>
+        		<td><p>선수명</p></td>
+        		<td><p>팀명</p></td>
+        		<td><p>포지션</p></td>
+        		<td><p>생년월일</p></td>
+        		<td><p>체격</p></td>
+        		<td><p>출신교</p></td>
         	
         		</tr>
         		
         		<c:forEach var="selectTeamPlayer" items="${selectTeamPlayer}"> 
 				<tr>
-					<td><h3>${selectTeamPlayer.playerNum}</h3></td>
-					<td><h3>${selectTeamPlayer.playerName}</h3></td>	
-					<td><h3>${selectTeamPlayer.teamName}</h3></td>
-					<td><h3>${selectTeamPlayer.position}</h3></td>
-					<td><h3>${selectTeamPlayer.birthday}</h3></td>
-					<td><h3>${selectTeamPlayer.hnW}</h3></td>
-					<td><h3>${selectTeamPlayer.school}</h3></td>
+					<td><p>${selectTeamPlayer.playerNum}</p></td>
+					<td><p>${selectTeamPlayer.playerName}</p></td>	
+					<td><p>${selectTeamPlayer.teamName}</p></td>
+					<td><p>${selectTeamPlayer.position}</p></td>
+					<td><p>${selectTeamPlayer.birthday}</p></td>
+					<td><p>${selectTeamPlayer.hnW}</p></td>
+					<td><p>${selectTeamPlayer.school}</p></td>
 
 					
 					
@@ -126,7 +128,7 @@
        </div>
     
     </main3>
->>>>>>> branch 'master' of https://github.com/bouquet3035/baseball
+
 
     <footer>Footer</footer>
 </section>
@@ -215,12 +217,12 @@ $(document).ready(function(){
         width: 100%;
         height: 100%;
         grid-template-areas: "head "
-        "main0"
+        
         "main1"
         "main2"
         "main3"
         "foot";
-        grid-template-rows: 5% 20% 25% 25% 20% 5%;
+        grid-template-rows: 5% 15% 25% 50% 5%;
         grid-template-columns: 100%;
 
 
@@ -232,11 +234,6 @@ $(document).ready(function(){
 
     }
 
-
-    #page > main0 {
-        grid-area: main0;
-        background-color: #E5E5E5;
-    }
 
     #page > main1 {
         grid-area: main1;
@@ -268,9 +265,9 @@ $(document).ready(function(){
     }
      .teamplayer {
 
-        margin: 1px;
+
         border: 5px solid #477FD6;
-        padding: 1px;
+        
         background-color: rgba( 255, 255, 255, 0.5 );
     }
     

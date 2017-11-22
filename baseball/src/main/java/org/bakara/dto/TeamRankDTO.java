@@ -11,9 +11,9 @@ public class TeamRankDTO {
 	int victory ; 			//승리한 횟수 
 	int lose; 				//패 한 횟수
 	int draw; 				// 무승부 한 횟수
-	Long gameodds; 			// 승률
-	String gamecar ; 		// 게임차 00
-	String recentgames;		// 최근 10경기 
+	Long gameOdds; 			// 승률
+	String gameCar ; 		// 게임차 00
+	String recentGames;		// 최근 10경기 
 	String continuity;		//연속 
 	String home ; 			// 홈 
 	String visiting; 		// 방문 
