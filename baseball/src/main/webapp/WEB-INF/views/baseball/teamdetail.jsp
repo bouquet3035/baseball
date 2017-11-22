@@ -81,13 +81,9 @@
 				</c:forEach>
 				</table>
 				
-				
-				
         </div>
    </main1>
    
-   
-<<<<<<< HEAD
     <main2><h3>팀 관련 뉴스</h3>
     <div class="div" id="teamnews">
 				<ul>
@@ -95,9 +91,7 @@
 				</ul>
     </div>
     </main2>
-    <main3><h3>선수</h3><div class="div"></div></main3>
-=======
-    <main2><h3>팀 관련 뉴스</h3><div class="div"></div></main2>
+    
     <main3><h3>선수</h3>
     <div class="teamplayer">
     	
@@ -184,9 +178,9 @@ $(document).ready(function(){
 			for(var i = 0; i < arr.length; i++){
 								
 				str += "<li><a href='http://sports.news.naver.com/"+ arr[i].url +"' >"+arr[i].title +"</a></li>";
-						
+				$("#teamnews").html(str);
 			}
-			$("#teamnews").html(str);
+			
 			
 		 });
 	}shownews();
