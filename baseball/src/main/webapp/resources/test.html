@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section id="page">
+    <header>Header</header>
+
+    <main1><h3>팀 순위</h3><div class="div"  id="teamnews" ><ul></ul></div></main1>
+
+    <footer>Footer</footer>
+</section>
+
+</body>
+
+
+<style>
+    #page {
+        display: grid;
+        width: 100%;
+        height: 30em;
+        grid-template-areas: "head "
+        "main1"
+        "foot";
+        grid-template-rows: 15% 300% 15%;
+        grid-template-columns: 100%;
+    }
+
+    #page > header {
+        grid-area: head;
+        background-color: #8ca0ff;
+    }
+
+    #page > nav {
+        grid-area: nav;
+        background-color: #ffa08c;
+    }
+
+    #page > main1 {
+        grid-area: main1;
+        background-color: #ffff64;
+    }
+    #page > main2 {
+        grid-area: main2;
+        background-color: #8ca0ff;
+    }
+    .div {
+
+        width:90%;
+        height: 90%;
+        margin: 5%;
+        border: 2px solid red;
+
+    }
+
+
+    #page > footer {
+        grid-area: foot;
+        background-color: #8cffa0;
+
+    }
+
+
+
+</style>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function(){
+	
+	var teamname = 'KIA';
+	
+	console.log(teamname);
+	
+	function shownews() {
+		 var str = "";
+		 var url = "/baseball/teamdetail/"+teamname+"";
+		 console.log(url);
+		
+		 $.getJSON(url,function(arr){
+		 
+			for(var i = 0; i < arr.length; i++){
+								
+				str += "<li><a href='http://sports.news.naver.com/"+ arr[i].url +"' >"+arr[i].title +"</a></li>";
+				$("#teamnews").html(str);
+			}
+		 });
+	}shownews();
+});
+
+</script>
+</html>
+
