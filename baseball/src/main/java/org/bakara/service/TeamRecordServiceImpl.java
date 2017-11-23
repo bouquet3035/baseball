@@ -14,9 +14,9 @@ public class TeamRecordServiceImpl implements TeamRecordService {
 	private TeamRecordMapper mapper; 
 
 	@Override  
-	public List<TeamRecordDTO> teamRecord() {
+	public TeamRecordDTO teamRecord (TeamRecordDTO teamName) {
 		// TODO Auto-generated method stub
-		return mapper.teamRecord(); 
+		return mapper.teamRecord(teamName); 
 	}
 
 

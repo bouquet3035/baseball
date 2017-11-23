@@ -5,5 +5,6 @@ import java.util.List;
 import org.bakara.dto.TeamRecordDTO;
 
 public interface TeamRecordService {
-	public List<TeamRecordDTO> teamRecord() ;   //∆¿ ±‚∑œ 
+	
+	public TeamRecordDTO teamRecord(TeamRecordDTO teamName);  //«ÿ¥Á∆¿±‚∑œ ¡§∫∏ 
 }

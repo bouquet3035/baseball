@@ -22,41 +22,12 @@
 
   <main1>
         <div class="menu1"><h1>btn</h1></div>
-        <h3>팀 순위</h3>
-        <div class="div">
+        <p>팀 순위</p>
         
-        		<table>
-        		<tr>
-        		<td><h3>순위</h3></td>
-        		<td><h3>팀이름</h3></td>
-        		<td><h3>게임</h3></td>
-        		<td><h3>승리</h3></td>
-        		<td><h3>패</h3></td>
-        		<td><h3>무승부</h3></td>
-        		<td><h3>승률</h3></td>
-        		<td><h3>게임차</h3></td>
-        		<td><h3>최근 10경기</h3></td>
-        		<td><h3>연속</h3></td>
-        		<td><h3>홈</h3></td>
-        		<td><h3>방문</h3></td>
-        		
-    
-        		</tr>
-        		
-        		<tr>
-        		
-        		<div id="teamrank">
-				<ul>
-					
-				</ul>
-    			</div>
-        		
-				</tr>
-				</table>
-        	
-        	
-        </div>
-    </main1>
+         <table class="wantPoint" >
+			
+		</table>
+</main1> 
     <footer>Footer</footer>
 </section>
 
@@ -81,31 +52,51 @@
 $(document).ready(function(){
 	
 	function shownews() {
-		 var str = "";
-		 var url = "/baseball/teaminfo1"; 
 		
-		 $.getJSON(url,function(arr){
-		 
-			for(var i = 0; i < arr.length; i++){
-								
-				str += "<p><th>"+arr[i].rank +"</th>"
-				+"<a href='/baseball/teamdetail'><th>"+arr[i].teamName +"</th></a>"
-				+"<th>"+arr[i].game+arr[i].victory
-				+"<th>"+ arr[i].lose+ arr[i].draw
-				+"<th>"+arr[i].gameOdds
-				+"<th>"+arr[i].gameCar
-				+"<th>"+arr[i].recentGames
-				+"<th>"+arr[i].continuity
-				+"<th>"+arr[i].home+arr[i].visiting
-				+"</p>";
-						
-			}
-			$("#teamrank").html(str);
+		
+		 var str = "";
+		 var main = ""; 
+		 var url = "/baseball/teaminforank"; 
+		
 			
-		 });
-	}shownews();
+		 $.getJSON(url,function(arr){
+				 	  	
+		 	 
+		 	 str +="<tr>" 
+		 		 		+"<th><h3>순위</h3></th>"
+			     		+"<th><h3>팀이름</h3></th>"
+			    		+"<th><h3>게임</h3></th>"
+			    		+"<th><h3>승리</h3></th>"
+			    		+"<th><h3>패</h3></th>"
+			    		+"<th><h3>무승부</h3></th>"
+			    		+"<th><h3>승률</h3></th>"
+			    		+"<th><h3>게임차</h3></th>"
+			    		+"<th><h3>최근 10경기</h3></th>"
+			    		+"<th><h3>연속</h3></th>"
+			    		+"<th><h3>홈</h3></th>"
+			    		+"<th><h3>방문</h3></th>"
+			    		+"</tr>"
+        	
+			 for (var i = 0; i < arr.length; i++) {
+					str +="<tr>" 
+						+"<td>"+arr[i].rank +"</td>"
+					+"<td><a href=/baseball/teamdetail/"+ arr[i].teamName +">"+arr[i].teamName +"</a></td>"
+					+"<td>"+arr[i].game+arr[i].victory+"</td>"
+					+"<td>"+ arr[i].lose+ arr[i].draw+"</td>"
+					+"<td>"+arr[i].gameOdds+"</td>"
+					+"<td>"+arr[i].gameCar+"</td>"
+					+"<td>"+arr[i].recentGames+"</td>"
+					+"<td>"+arr[i].continuity+"</td>"
+					+"<td>"+arr[i].home+arr[i].visiting+"</td>"
+					+"</tr>" 
+				
+			 }
+			 $('.wantPoint').html(str);
+			
+		});
+	} 
+	shownews();
 });
-
 </script>
 
 <style>
@@ -150,16 +141,16 @@ $(document).ready(function(){
      
     }
 
-    .div {
+    .wantPoint {
 
-        width:90%;
+        width:100%;
         height: 90%;
-        margin: 5%;
+        margin: 1%;
         border: 2px solid red;
         background-color: rgba( 255, 255, 255, 0.5 );
         
 
-/*     } */
+		}
 
 
     #page > footer {

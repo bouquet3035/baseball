@@ -15,13 +15,11 @@
         <button class="menu">버튼</button>
 
     </header>
-   <main0>
-       <div class="menu1"><h1>btn</h1></div>
-       <h3>선수 명단</h3><div class="div">
-		
-   </div>
-   </main0>
+
+     
+ 
     <main1>
+       <div class="menu1"><h1>btn</h1></div>
         <h3>팀 기록</h3>
         <div class="teamrecord">
         		<table>
