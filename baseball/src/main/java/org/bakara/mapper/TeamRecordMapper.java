@@ -7,8 +7,8 @@ import org.bakara.dto.TeamRecordDTO;
 
 public interface TeamRecordMapper {
 	
-	@Select("select * from tbl_teamrecord")    // ÆÀ ±â·Ï  
-	public List<TeamRecordDTO> teamRecord()  ;
+	@Select("select * from tbl_teamrecord where teamname = #{teamname} ")   
+	public TeamRecordDTO teamRecord(TeamRecordDTO teamName)  ;
 		
 
 }

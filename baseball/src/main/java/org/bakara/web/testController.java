@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,15 +43,7 @@ public class testController {
 		
 	}
 	
-	
-	@GetMapping("/teaminfo1")
-	@ResponseBody
-	public List<TeamRankDTO> teaminfo1(){
 		
-		return TeamRankService.teamRank() ; 
-		
-	}
-	
 	@GetMapping("/game")
 	public void game () {
 		
@@ -62,14 +55,14 @@ public class testController {
 	}
 	
 	
-	@GetMapping("/teamdetail")
+	/*@GetMapping("/teamdetail")
 	public void teamdetail (Model model) {
 
-		model.addAttribute("teamrecord",TeamRecordService.teamRecord()) ; 
+		
 		model.addAttribute("selectTeamPlayer",TeamPlayerService.selectTeamPlayer()) ; 
 
-	}
-
+	}*/
+	
 
 	@GetMapping("/playersearch")
 	public void playersearch () {
@@ -83,13 +76,6 @@ public class testController {
 	}
 	
 	
-	@GetMapping("/teamdetail/{teamname}")
-	@ResponseBody
-	public List<TeamNewsDTO> getNews(@PathVariable("teamname") String teamname){
-		
-		return TeamNewsService.getNews(teamname);
-		
-	}
 	
 	
 }
