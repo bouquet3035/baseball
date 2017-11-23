@@ -20,7 +20,6 @@ public class BaseballRestConrtroller {
 	@Autowired private TeamNewsService NewsService;
 	@Autowired private TeamRankService RankService;
 	
-	
 	@GetMapping("/teamdetail/{teamname}")
 	public List<TeamNewsDTO> getNews(@PathVariable("teamname") String teamname){
 		
