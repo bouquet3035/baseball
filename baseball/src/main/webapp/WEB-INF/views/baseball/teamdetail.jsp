@@ -164,17 +164,20 @@
 
 $(document).ready(function(){
 	
+	var teamName = "${team}";
+	
 	var teamname = $("#teamname").text();
 	
 	console.log(teamname);
 	
 	function shownews() {
 		 var str = "";
-		 var url = "/baseball/teamdetail/"+teamname+"";
+		 var url = "/baseball/teamdetail/"+teamName;
 		 console.log(url);
 		
 		 $.getJSON(url,function(arr){
 		 
+			 console.log(arr);
 			for(var i = 0; i < arr.length; i++){
 								
 				str += "<li><a href='http://sports.news.naver.com/"+ arr[i].url +"' >"+arr[i].title +"</a></li>";
@@ -183,7 +186,8 @@ $(document).ready(function(){
 			
 			
 		 });
-	}shownews();
+	}
+	shownews();
 });
 
 </script>

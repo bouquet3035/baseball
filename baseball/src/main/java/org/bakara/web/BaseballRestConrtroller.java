@@ -21,18 +21,20 @@ public class BaseballRestConrtroller {
 	@Autowired private TeamRankService RankService;
 	
 	
+
 	@GetMapping("/teamdetail/{teamname}")
 	public List<TeamNewsDTO> getNews(@PathVariable("teamname") String teamname){
 		
 		return NewsService.getNews(teamname);
-		
 	}
 	
 	@GetMapping("/teaminforank")
-	public List<TeamRankDTO> teaminfo1(){
+	public List<TeamRankDTO> teaminfoRank(){
 		
 		return RankService.teamRank() ; 
 		
 	}
+	
+	
 
 }

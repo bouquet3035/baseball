@@ -80,7 +80,7 @@ $(document).ready(function(){
 			 for (var i = 0; i < arr.length; i++) {
 					str +="<tr>" 
 						+"<td>"+arr[i].rank +"</td>"
-					+"<td><a href=/baseball/teamdetail/"+ arr[i].teamName +">"+arr[i].teamName +"</a></td>"
+					+"<td><a href=/baseball/teamdetail?teamName="+ arr[i].teamName +">"+arr[i].teamName +"</a></td>"
 					+"<td>"+arr[i].game+arr[i].victory+"</td>"
 					+"<td>"+ arr[i].lose+ arr[i].draw+"</td>"
 					+"<td>"+arr[i].gameOdds+"</td>"

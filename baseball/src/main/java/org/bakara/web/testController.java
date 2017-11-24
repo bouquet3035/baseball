@@ -39,7 +39,7 @@ public class testController {
 	private TeamNewsService TeamNewsService;
 	
 	@GetMapping("/teaminfo")  // ���� : ������ teamRank ���������ѷ��ִ°� ������ �����Ͷ� t
-	public void teaminfo (Model model) {
+	public void teaminfo () {
 		
 	}
 	
@@ -55,13 +55,10 @@ public class testController {
 	}
 	
 	
-	/*@GetMapping("/teamdetail")
-	public void teamdetail (Model model) {
-
-		
-		model.addAttribute("selectTeamPlayer",TeamPlayerService.selectTeamPlayer()) ; 
-
-	}*/
+	@GetMapping("/teamdetail")
+	public void teamdetail (Model model, String teamName) {
+		model.addAttribute("team", teamName);
+	}
 	
 
 	@GetMapping("/playersearch")
