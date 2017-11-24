@@ -1,4 +1,4 @@
-package org.bakara.web;
+/*package org.bakara.web;
 
 import java.util.List;
 
@@ -83,12 +83,13 @@ public class testController {
 	}
 	
 
-	@GetMapping("/playschedule")
-	public void playschedule(Model model) {
-		model.addAttribute("playschedule", PlayScheduleService.playschedule());
+	@GetMapping("/playschedule/")
+	public void playschedule() {
+	
 	}
 
 	
 	
 	
 }
+*/
