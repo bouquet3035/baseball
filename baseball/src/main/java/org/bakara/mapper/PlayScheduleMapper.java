@@ -9,5 +9,6 @@ import org.bakara.dto.PlayScheduleDTO;
 public interface PlayScheduleMapper {
 
 	@Select("select * from tbl_playschedule")
-	public List<PlayScheduleDTO> playschedule()  ; //ÀüÃ¼ °æ±â ÀÏÁ¤
+	public List<PlayScheduleDTO> playschedule()  ; //ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	
 }

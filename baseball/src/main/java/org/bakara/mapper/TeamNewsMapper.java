@@ -7,7 +7,7 @@ import org.bakara.dto.TeamNewsDTO;
 
 public interface TeamNewsMapper {
 
-	@Select("select * from tbl_news where teamname = #{teamname} order by title desc limit 1,9")
+	@Select("select * from tbl_news where teamname = #{teamname} order by title desc limit 0,9")
 	public List<TeamNewsDTO> getNews(String teamname);
 	
 }

@@ -106,7 +106,7 @@ $(document).ready(function(){
 	
 	function shownews() {
 		 var str = "";
-		 var url = "/baseball/teamdetail/"+teamname+"";
+		 var url = "/baseball/teamdetail/"+ teamname +"";
 		 console.log(url);
 		
 		 $.getJSON(url,function(arr){
@@ -115,6 +115,7 @@ $(document).ready(function(){
 								
 				str += "<li><a href='http://sports.news.naver.com/"+ arr[i].url +"' >"+arr[i].title +"</a></li>";
 				$("#teamnews").html(str);
+				console.log(str);
 			}
 		 });
 	
@@ -231,7 +232,7 @@ $(document).ready(function(){
         height: 100%;
     }
     body{
-        background-image: url('/resources/img/background.jpg');
+        background-image: url('/resources/img/image5.jpg');
         background-size: 100%
     }
 

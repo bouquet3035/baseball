@@ -62,6 +62,8 @@ public class BaseballRestConrtroller {
 	@GetMapping("/playschedule")
 	public void playschedule() {
 		
+		
+		
 	}
 
 }
