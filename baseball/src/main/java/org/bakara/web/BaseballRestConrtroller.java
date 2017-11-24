@@ -2,10 +2,12 @@ package org.bakara.web;
 
 import java.util.List;
 
+import org.bakara.dto.PlayScheduleDTO;
 import org.bakara.dto.TeamNewsDTO;
 import org.bakara.dto.TeamPlayerDTO;
 import org.bakara.dto.TeamRankDTO;
 import org.bakara.dto.TeamRecordDTO;
+import org.bakara.service.PlayScheduleService;
 import org.bakara.service.TeamNewsService;
 import org.bakara.service.TeamPlayerService;
 import org.bakara.service.TeamRankService;
@@ -28,7 +30,7 @@ public class BaseballRestConrtroller {
 	@Autowired private TeamRankService RankService;
 	@Autowired private TeamRecordService RecordService;
 	@Autowired private TeamPlayerService PlayerService;
-	
+	@Autowired private PlayScheduleService PlayScheduleService; 
 
 	@GetMapping("/teamdetail/{teamname}")
 	public List<TeamNewsDTO> getNews(@PathVariable("teamname") String teamname){
@@ -59,9 +61,10 @@ public class BaseballRestConrtroller {
 		
 	}
 	
-	@GetMapping("/playschedule")
-	public void playschedule() {
-		
+	@GetMapping("/playschedule/{playschedule}")
+	public List<PlayScheduleDTO> playschedule(@PathVariable("playschedule") String playschedule) {
+			
+		return PlayScheduleService.playschedule() ; 
 	}
 
 }
