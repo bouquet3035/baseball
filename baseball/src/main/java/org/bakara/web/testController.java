@@ -1,6 +1,7 @@
 package org.bakara.web;
 
 import org.bakara.dto.TeamRecordDTO;
+import org.bakara.service.PlayScheduleService;
 import org.bakara.service.TeamPlayerService;
 import org.bakara.service.TeamRankService;
 import org.bakara.service.TeamRecordService;
@@ -25,6 +26,10 @@ public class testController {
 	private TeamRecordService TeamRecordService;
 	
 	@Autowired TeamRankService TeamRankService ; 
+	
+	@Autowired 
+	private PlayScheduleService PlayScheduleService;
+	
 	
 	@GetMapping("/teaminfo")  // «ı¡÷ : ∆¿º¯¿ß teamRank ∆¿¡§∫∏ø°ª—∑¡¡÷¥¬∞‘ ∆¿º¯¿ß µ•¿Ã≈Õ∂Ûº≠ t
 	public void teaminfo (Model model) {
@@ -60,4 +65,8 @@ public class testController {
 		
 	}
 	
+	@GetMapping("/playschedule")
+	public void playschedule(Model model) {
+		model.addAttribute("playschedule", PlayScheduleService.playschedule());
+	}
 }
