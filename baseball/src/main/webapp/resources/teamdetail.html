@@ -17,9 +17,9 @@
     <main1>
        <div class="menu1"><h1>btn</h1></div>
         <h3>팀 기록</h3>
-        <table class = teamrecord>
+        <div class = div id="teamrecord">
         
-        </table>
+        </div>
    </main1>
    
 
@@ -33,10 +33,11 @@
 
     
     <main3><h3>선수</h3>
-    <div class="div" id="teamrecord">
-    	
-        		
-       </div>
+	<div class="div" id="teamplayer">
+				<ul>
+					
+				</ul>
+    </div>
     
     </main3>
 
@@ -50,6 +51,7 @@
         src="https://code.jquery.com/jquery-3.2.1.js"
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous"></script>
+        
 <script>
     $(".menu1").hide();
 
@@ -117,39 +119,31 @@ $(document).ready(function(){
 		 });
 	}shownews();
 	
-	function showrecord() {
+	
+	function showplayer() {
 		
 		 var str = "";
-		 var main = ""; 
-		 var url = "/baseball/teamrecord/"+teamname+"";
+		 var url = "/baseball/teamplayer/"+teamname+"";
 		
 		 console.log(url); 	
 		 
 		 $.getJSON(url,function(arr){
-		 	 
-		 	 str +="<tr>"+"<th><h3>이름</h3></th>"
-		 	str +="<th><h3>경기</h3></th>"+"</tr>"
-       	
-			 for (var i = 0; i < arr.length; i++) {
-					str +="<tr>" 
-						+"<td>"+arr[i].teamname +"</td>"
-						+"<td>"+arr[i].game +"</td>"
+			 
+				for(var i = 0; i < arr.length; i++){
+									
+					str += "<li>"+arr[i].playerNum + arr[i].playerName + arr[i].teamName + arr[i].position + arr[i].birthday + arr[i].hnW + + arr[i].school + "</li>";
+					$("#teamplayer").html(str);
 					
-					+"</tr>" 
-				console.log(str);
-			 }
-			 $('#teamrecord').html(str);
-			
-		});
-	} 
-	showrecord();
-	
+				}
+			 });
+	}showplayer();
 });
 
 </script>
 
 
 <style>
+
     .menu1 {
         position: absolute;
         display: block;

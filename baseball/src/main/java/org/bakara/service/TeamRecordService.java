@@ -1,6 +1,5 @@
 package org.bakara.service;
 
-import java.util.List;
 
 import org.bakara.dto.TeamRecordDTO;
 

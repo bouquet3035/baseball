@@ -11,13 +11,13 @@ import org.springframework.stereotype.Service;
 public class TeamRecordServiceImpl implements TeamRecordService {
 	
 	@Inject
-	private TeamRecordMapper mapper; 
+	private TeamRecordMapper mapper;
 
-	@Override  
-	public TeamRecordDTO teamRecord (String teamname) {
-		// TODO Auto-generated method stub
+	@Override
+	public TeamRecordDTO teamRecord(String teamname) {
 		return mapper.teamRecord(teamname); 
-	}
+	} 
+
 
 
 }

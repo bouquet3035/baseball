@@ -23,7 +23,9 @@ public interface TeamPlayerMapper {
 	@Delete("delete from tbl_teamplayer")
 	public void resetTeamPlayers();
 	 
-	@Select("select * from tbl_teamplayer")  //¼±¼ö Á¤º¸¸¦ »Ñ·ÁÁÖ±âÀ§ÇÑ 
-	public List<TeamPlayerDTO> selectTeamPlayer() ; 
+	@Select("select * from tbl_teamplayer")  //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ·ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	public List<TeamPlayerDTO> selectTeamPlayer(String teamname) ; 
+	
+	
 		
 }
