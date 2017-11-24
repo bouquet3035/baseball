@@ -17,9 +17,9 @@
     <main1>
        <div class="menu1"><h1>btn</h1></div>
         <h3>팀 기록</h3>
-        <table class = teamrecord>
+        <div class = teamrecord id="teamrecord">
         
-        </table>
+        </div>
    </main1>
    
 
@@ -33,10 +33,11 @@
 
     
     <main3><h3>선수</h3>
-    <div class="div" id="teamrecord">
-    	
-        		
-       </div>
+	<div class="div" id="teamplayer">
+				<ul>
+					
+				</ul>
+    </div>
     
     </main3>
 
@@ -50,6 +51,7 @@
         src="https://code.jquery.com/jquery-3.2.1.js"
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous"></script>
+        
 <script>
     $(".menu1").hide();
 
@@ -115,18 +117,21 @@ $(document).ready(function(){
 				$("#teamnews").html(str);
 			}
 		 });
+	
 	}shownews();
+	
 	
 	function showrecord() {
 		
 		 var str = "";
-		 var main = ""; 
 		 var url = "/baseball/teamrecord/"+teamname+"";
 		
 		 console.log(url); 	
 		 
 		 $.getJSON(url,function(arr){
-		 	 
+
+			 console.log(arr); 	
+			 
 		 	 str +="<tr>"
 		 	 +"<th><h3>팀이름</h3></th>"
 		 	+"<th><h3>WAR</h3></th>"
@@ -179,18 +184,38 @@ $(document).ready(function(){
 			
 			
 			 
-			 $('.teamrecord').html(str);
+			 $('#teamrecord').html(str);
 			
 		});
-	} 
-	showrecord();
-	
-});
 
+	}showrecord();	
+	
+	
+	function showplayer() {
+		
+		 var str = "";
+		 var url = "/baseball/teamplayer/"+teamname+"";
+		
+		 console.log(url); 	
+		 
+		 $.getJSON(url,function(arr){
+
+			 
+				for(var i = 0; i < arr.length; i++){
+									
+					str += "<li>"+arr[i].playerNum + arr[i].playerName + arr[i].teamName + arr[i].position + arr[i].birthday + arr[i].hnW + + arr[i].school + "</li>";
+					$("#teamplayer").html(str);
+					
+				}
+			 });
+	
+	}showplayer();
+});
 </script>
 
 
 <style>
+
     .menu1 {
         position: absolute;
         display: block;
@@ -215,8 +240,7 @@ $(document).ready(function(){
         display: grid;
         width: 100%;
         height: 100%;
-        grid-template-areas: "head "
-        
+        grid-template-areas: "head"
         "main1"
         "main2"
         "main3"

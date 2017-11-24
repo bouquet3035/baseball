@@ -124,8 +124,8 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 	}
 
 	@Override
-	public List<TeamPlayerDTO> selectTeamPlayer() {
-		return mapper.selectTeamPlayer(); 
+	public List<TeamPlayerDTO> selectTeamPlayer(String teamname) {
+		return mapper.selectTeamPlayer(teamname); 
 	}
 
 }
