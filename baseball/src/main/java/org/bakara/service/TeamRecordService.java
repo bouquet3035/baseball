@@ -6,5 +6,5 @@ import org.bakara.dto.TeamRecordDTO;
 
 public interface TeamRecordService {
 	
-	public TeamRecordDTO teamRecord(TeamRecordDTO teamName);  //ÇØ´çÆÀ±â·Ï Á¤º¸ 
+	public TeamRecordDTO teamRecord(String teamname);  //ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 }
