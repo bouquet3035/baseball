@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class TeamRecordDTO {
-	String teamName ; 
+	String teamname ; 
 	Long war ; 
 	int game; 
 	int hs; 
