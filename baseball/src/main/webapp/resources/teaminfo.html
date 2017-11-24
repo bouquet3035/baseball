@@ -76,13 +76,17 @@ $(document).ready(function(){
 					str +="<tr>" 
 					+"<td>"+arr[i].rank +"</td>"
 					+"<td><a href=/resources/teamdetail.html?teamname="+ arr[i].teamName +">"+arr[i].teamName +"</a></td>"
-					+"<td>"+arr[i].game+arr[i].victory+"</td>"
-					+"<td>"+ arr[i].lose+ arr[i].draw+"</td>"
+							
+					+"<td>"+arr[i].game+"</td>"
+					+"<td>"+arr[i].victory+"</td>"
+					+"<td>"+ arr[i].lose+"</td>"
+					+"<td>"+arr[i].draw+"</td>"
 					+"<td>"+arr[i].gameOdds+"</td>"
 					+"<td>"+arr[i].gameCar+"</td>"
 					+"<td>"+arr[i].recentGames+"</td>"
 					+"<td>"+arr[i].continuity+"</td>"
-					+"<td>"+arr[i].home+arr[i].visiting+"</td>"
+					+"<td>"+arr[i].home+"</td>"
+					+"<td>"+arr[i].visiting+"</td>"
 					+"</tr>" 
 				
 			 }
@@ -96,6 +100,18 @@ $(document).ready(function(){
 
 <style>
 
+
+table{
+		table-layout:fixed ;
+		border: 1px solid thick;	
+	 border-collapse: collapse;
+		}
+		
+th, td {
+  border: 1px solid #444444;
+  word-break:break-all;
+  font-size: 2px;
+  }
 .menu1 {
         position: absolute;
         display: block;
@@ -110,7 +126,7 @@ $(document).ready(function(){
         height: 100%;
     }
     body{
-        background-image: url('/resources/img/background.jpg');
+        background-image: url('/resources/img/image5.jpg');
         background-size: 100% ;
     }
     #page {
