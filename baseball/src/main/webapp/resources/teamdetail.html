@@ -127,18 +127,59 @@ $(document).ready(function(){
 		 
 		 $.getJSON(url,function(arr){
 		 	 
-		 	 str +="<tr>"+"<th><h3>이름</h3></th>"
-		 	str +="<th><h3>경기</h3></th>"+"</tr>"
+		 	 str +="<tr>"
+		 	 +"<th><h3>팀이름</h3></th>"
+		 	+"<th><h3>WAR</h3></th>"
+		 	+"<th><h3>G</h3></th>"
+		 	+"<th><h3>타석</h3></th>"
+		 	+"<th><h3>득점</h3></th>"
+		 	+"<th><h3>안타</h3></th>"
+		 	+"<th><h3>이타</h3></th>"
+		 	+"<th><h3>삼타</h3></th>"
+		 	+"<th><h3>홈런</h3></th>"
+		 	+"<th><h3>루타</h3></th>"
+		 	+"<th><h3>타점</h3></th>"
+		 	+"<th><h3>도루</h3></th>"
+		 	+"<th><h3>도실</h3></th>"
+		 	+"<th><h3>볼넷</h3></th>"
+			+"<th><h3>사구</h3></th>"
+			+"<th><h3>고사</h3></th>"
+			+"<th><h3>삼진</h3></th>"
+			+"<th><h3>병살</h3></th>"
+			+"<th><h3>타율</h3></th>"
+			+"<th><h3>출투율</h3></th>"
+			+"<th><h3>장타율</h3></th>"
+			+"<th><h3>OPS</h3></th>"
+			+"<tr>"
        	
-			 for (var i = 0; i < arr.length; i++) {
-					str +="<tr>" 
-						+"<td>"+arr[i].teamname +"</td>"
-						+"<td>"+arr[i].game +"</td>"
-					
-					+"</tr>" 
-				console.log(str);
-			 }
-			 $('#teamrecord').html(str);
+			
+			+"<tr>" 
+			+"<td><h3>"+arr.teamname +"</h3></td>"
+			+"<td><h3>"+arr.war +"</h3></td>"
+			+"<td><h3>"+arr.game +"</h3></td>"
+			+"<td><h3>"+arr.hs +"</h3></td>"
+			+"<td><h3>"+arr.hn +"</h3></td>"
+			+"<td><h3>"+arr.pt +"</h3></td>"
+			+"<td><h3>"+arr.hit +"</h3></td>"
+			+"<td><h3>"+arr.h2 +"</h3></td>"
+			+"<td><h3>"+arr.h3 +"</h3></td>"
+			+"<td><h3>"+arr.homerun +"</h3></td>"
+			+"<td><h3>"+arr.bh +"</h3></td>"
+			+"<td><h3>"+arr.rbi +"</h3></td>"
+			+"<td><h3>"+arr.sb +"</h3></td>"
+			+"<td><h3>"+arr.sf +"</h3></td>"
+			+"<td><h3>"+arr.bb +"</h3></td>"
+			+"<td><h3>"+arr.ddb +"</h3></td>"
+			+"<td><h3>"+arr.ifb +"</h3></td>"
+			+"<td><h3>"+arr.so +"</h3></td>"
+			+"<td><h3>"+arr.doubleout +"</h3></td>"
+		
+			
+			+"</tr>"
+			
+			
+			 
+			 $('.teamrecord').html(str);
 			
 		});
 	} 
