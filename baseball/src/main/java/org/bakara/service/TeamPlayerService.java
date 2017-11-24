@@ -7,10 +7,8 @@ import org.bakara.dto.TeamRecordDTO;
 
 public interface TeamPlayerService {
 	
-	public void crawlTeamPlayer(TeamPlayerDTO dto);
+	public void crawlPlayersInfo() throws Exception;
 	
-	public List<TeamPlayerDTO> selectTeamPlayer();   //TeamPlayer Á¤º¸ »Ñ·ÁÁÖ´Â 
+	public List<TeamPlayerDTO> selectTeamPlayer(String teamname);   //TeamPlayer ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ·ï¿½ï¿½Ö´ï¿½ 
 	
-	
-
 }

@@ -8,6 +8,7 @@
 <h1>
 	Hello world!  
 </h1>
+<a href=""src/main/webapp/resources/test.html">sdfs</a>
 
 <P>  The time on the server is ${serverTime}. </P>
 </body>

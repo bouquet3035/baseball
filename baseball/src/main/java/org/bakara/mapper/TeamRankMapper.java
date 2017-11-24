@@ -7,7 +7,7 @@ import org.bakara.dto.TeamRankDTO;
 
 public interface TeamRankMapper {
 	
-	@Select("select * from tbl_teamrank")
+	@Select("select * from tbl_teamrank order by rank")
 	public List<TeamRankDTO> teamRank();   //ÆÀ¼øÀ§ 
  	
 
