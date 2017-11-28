@@ -11,4 +11,6 @@ public interface TeamPlayerService {
 	
 	public List<TeamPlayerDTO> selectTeamPlayer(String teamname);   //TeamPlayer ���� �ѷ��ִ� 
 	
+	
+	
 }

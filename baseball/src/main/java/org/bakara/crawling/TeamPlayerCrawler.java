@@ -21,16 +21,16 @@ public class TeamPlayerCrawler {
 	public TeamPlayerService service;
 
 	public void crawlTeamPlayer() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");  //웹드라이버 크롬드라이버 셋팅 (설정) 
 
 		String baseUrl = "http://www.koreabaseball.com/";
 		String playerSearch = "Player/Search.aspx";
 
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(); // 셋팅한 드라이버를 맞추는 작업 
 
-		driver.get(baseUrl + playerSearch);
+		driver.get(baseUrl + playerSearch); // 페이지 열기 
 
-		int countOpt = driver.findElement(By.id("cphContents_cphContents_cphContents_ddlTeam"))
+		int countOpt = driver.findElement(By.id("cphContents_cphContents_cphContents_ddlTeam")) 
 				.findElements(By.tagName("option")).size();
 
 		for (int i = 1; i < 2; i++) {// countOpt; i++) {
@@ -69,6 +69,7 @@ public class TeamPlayerCrawler {
 					dto.setHnW( player.findElement(By.cssSelector("td:nth-child(6)")).getText());
 					dto.setSchool( player.findElement(By.cssSelector("td:nth-child(7)")).getText());
 					
+					// 매퍼 처리 
 //					System.out.print("등번호: " + player.findElement(By.cssSelector("td:nth-child(1)")).getText());
 //					System.out.print(", 선수명: " + player.findElement(By.cssSelector("td:nth-child(2)")).getText());
 //					System.out.print(", 팀명: " + player.findElement(By.cssSelector("td:nth-child(3)")).getText());
@@ -79,7 +80,8 @@ public class TeamPlayerCrawler {
 				}
 				
 				
-
+				// 링크 처리 
+				
 				List<WebElement> links = driver.findElement(By.className("tEx"))
 						.findElements(By.cssSelector("tbody > tr > td > a"));
 

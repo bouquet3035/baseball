@@ -46,20 +46,20 @@ public class BaseballRestConrtroller {
 	}
 	
 
+	@GetMapping("/teamplayer/{teamname}")
+	public TeamRecordDTO teamplayer(@PathVariable("teamname") String teamname){
+		log.info(teamname);
+		return RecordService.teamRecord(teamname);
+	}
+	
+
 	@GetMapping("/teamrecord/{teamname}")
 	public TeamRecordDTO getRecord(@PathVariable("teamname") String teamname){
 		log.info(teamname);
 		return RecordService.teamRecord(teamname);
 	}
 	
-	@GetMapping("/teamplayer/{teamname}")
-	public List<TeamPlayerDTO> selectTeamPlayer(@PathVariable("teamname") String teamname){
-		
-		log.info(teamname);
-		
-		return PlayerService.selectTeamPlayer(teamname);
-		
-	}
+
 
 	@GetMapping("/playschedule/{playschedule}")
 	public List<PlayScheduleDTO> playschedule(@PathVariable("playschedule") String playschedule) {
