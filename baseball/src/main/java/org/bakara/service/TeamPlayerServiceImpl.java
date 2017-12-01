@@ -7,6 +7,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.bakara.dto.BasicYearRecordDTO;
+import org.bakara.dto.Criteria;
 import org.bakara.dto.PlayerBasicDTO;
 import org.bakara.dto.TeamPlayerDTO;
 import org.bakara.dto.TeamRecordDTO;
@@ -45,7 +46,9 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 		int countOpt = driver.findElement(By.id("cphContents_cphContents_cphContents_ddlTeam"))
 				.findElements(By.tagName("option")).size();
 			//팀선택 
-		for (int i = 1; i < 2; i++) {// countOpt; i++) {     			
+		
+		for (int i = 1; i <countOpt; i++) {     			
+	//	for (int i = 1; i < 2; i++) {// countOpt; i++) {     			
 			List<WebElement> options = driver.findElement(By.id("cphContents_cphContents_cphContents_ddlTeam"))
 					.findElements(By.tagName("option"));
 
@@ -156,9 +159,9 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 					BasicYearRecordDTO.setPosition("타자");
 					
 					
-					BasicYearRecordDTO.setTeamName(BasicYearRecord3.findElement(By.cssSelector("td:nth-child(1)")).getText());
+					BasicYearRecordDTO.setTeamname(BasicYearRecord3.findElement(By.cssSelector("td:nth-child(1)")).getText());
 					
-					if(BasicYearRecordDTO.getTeamName().contains( "기록이 없습니다.")) {
+					if(BasicYearRecordDTO.getTeamname().contains( "기록이 없습니다.")) {
 						
 						continue ;    // 기록이 없는 선수들 때문에 
 					}
@@ -213,9 +216,9 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 				BasicYearRecordDTO.setPosition("투수");
 				
 			
-				BasicYearRecordDTO.setTeamName(BasicYearRecord1.findElement(By.cssSelector("td:nth-child(1)")).getText());	
+				BasicYearRecordDTO.setTeamname(BasicYearRecord1.findElement(By.cssSelector("td:nth-child(1)")).getText());	
 				
-				if(BasicYearRecordDTO.getTeamName().contains( "기록이 없습니다.")) {
+				if(BasicYearRecordDTO.getTeamname().contains( "기록이 없습니다.")) {
 					
 					continue ;    // 기록이 없는 선수들 때문에 
 				}
@@ -242,7 +245,7 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 				//테스트
 				System.out.println("등번호 :"+  BasicYearRecordDTO.getPlayerNum());
 				System.out.println("선수 이름 :"+  BasicYearRecordDTO.getPlayerName());
-				System.out.println("팀이름:"+BasicYearRecordDTO.getTeamName());
+				System.out.println("팀이름:"+BasicYearRecordDTO.getTeamname());
 				System.out.println("era :"+BasicYearRecord1.findElement(By.cssSelector("td:nth-child(2)")).getText());
 				
 				mapper.registerBasicYearRecordTusu(BasicYearRecordDTO);
@@ -279,6 +282,33 @@ public class TeamPlayerServiceImpl implements TeamPlayerService {
 	@Override
 	public List<TeamPlayerDTO> selectTeamPlayer(String teamname) {
 		return mapper.selectTeamPlayer(teamname); 
+	}
+
+
+
+	@Override
+	public List<BasicYearRecordDTO> selectBasicYearRecord(String teamname) {
+		return mapper.selectBasicYearRecord(teamname) ; 
+	}
+
+
+
+	@Override
+	public List<BasicYearRecordDTO> listpage(int page) {
+		if(page <= 0) {
+			page = 1; 
+		}
+		page = (page-1) * 10 ; 
+		
+		return mapper.listpage(page) ; 
+	}
+
+
+
+	@Override
+	public List<BasicYearRecordDTO> listCriteria(Criteria cri) {
+		// TODO Auto-generated method stub
+		return mapper.listCriteria(cri);
 	}
 
 }

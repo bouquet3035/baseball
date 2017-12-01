@@ -63,7 +63,7 @@ public class TeamPlayerCrawler {
 					
 					dto.setPlayerNum(Long.parseLong(player.findElement(By.cssSelector("td:nth-child(1)")).getText()));
 					dto.setPlayerName(player.findElement(By.cssSelector("td:nth-child(2)")).getText());
-					dto.setTeamName(player.findElement(By.cssSelector("td:nth-child(3)")).getText());
+					dto.setTeamname(player.findElement(By.cssSelector("td:nth-child(3)")).getText());
 					dto.setPosition( player.findElement(By.cssSelector("td:nth-child(4)")).getText()); 
 					dto.setBirthday( player.findElement(By.cssSelector("td:nth-child(5)")).getText());
 					dto.setHnW( player.findElement(By.cssSelector("td:nth-child(6)")).getText());

@@ -1,4 +1,4 @@
-/*package org.bakara.web;
+package org.bakara.web;
 
 import java.util.List;
 
@@ -31,10 +31,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class testController {
 	
-	@Autowired()
+	@Autowired
 	private TeamPlayerService TeamPlayerService;
-	
-	@Autowired() 
+	@Autowired
 	private TeamRecordService TeamRecordService;
 	
 	@Autowired 
@@ -87,9 +86,13 @@ public class testController {
 	public void playschedule() {
 	
 	}
-
+	
+	
+	@GetMapping("/test")
+	public void test() {
+		
+	}
 	
 	
 	
 }
-*/

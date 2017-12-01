@@ -1,34 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
-</head>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    
     <title>Title</title>
 </head>
 <body>
 <section id="page">
-    <header>Header
-      <button class="menu">버튼</button>
+    <header>
+      
     </header>
 
   <main1>
         <div class="menu1"><h1>btn</h1></div>
-        <p>팀 순위</p>
+        <h1>팀 순위</h1>>
         
          <table class="wantPoint" >
 			
 		</table>
 </main1> 
-    <footer>Footer</footer>
+    <footer></footer>
 </section>
 
 
@@ -52,7 +47,6 @@
 $(document).ready(function(){
 	
 	function shownews() {
-		
 		
 		 var str = "";
 		 var main = ""; 
@@ -79,15 +73,21 @@ $(document).ready(function(){
         	
 			 for (var i = 0; i < arr.length; i++) {
 					str +="<tr>" 
-						+"<td>"+arr[i].rank +"</td>"
-					+"<td><a href=/baseball/teamdetail?teamName="+ arr[i].teamName +">"+arr[i].teamName +"</a></td>"
-					+"<td>"+arr[i].game+arr[i].victory+"</td>"
-					+"<td>"+ arr[i].lose+ arr[i].draw+"</td>"
+					+"<td>"+arr[i].rank +"</td>"
+					+"<td><a href=/baseball/teamdetail?teamname="+ arr[i].teamName +">"+arr[i].teamName +"</a></td>"
+							
+							
+							
+					+"<td>"+arr[i].game+"</td>"
+					+"<td>"+arr[i].victory+"</td>"
+					+"<td>"+ arr[i].lose+"</td>"
+					+"<td>"+arr[i].draw+"</td>"
 					+"<td>"+arr[i].gameOdds+"</td>"
 					+"<td>"+arr[i].gameCar+"</td>"
 					+"<td>"+arr[i].recentGames+"</td>"
 					+"<td>"+arr[i].continuity+"</td>"
-					+"<td>"+arr[i].home+arr[i].visiting+"</td>"
+					+"<td>"+arr[i].home+"</td>"
+					+"<td>"+arr[i].visiting+"</td>"
 					+"</tr>" 
 				
 			 }
@@ -101,6 +101,18 @@ $(document).ready(function(){
 
 <style>
 
+
+table{
+		table-layout:fixed ;
+		border: 1px solid thick;	
+		 border-collapse: collapse;
+		}
+		
+th, td {
+  border: 1px solid #444444;
+  word-break:break-all;
+  font-size: 25px;
+  }
 .menu1 {
         position: absolute;
         display: block;
@@ -115,7 +127,7 @@ $(document).ready(function(){
         height: 100%;
     }
     body{
-        background-image: url('/resources/img/background.jpg');
+        background-image: url('/resources/img/image5.jpg');
         background-size: 100% ;
     }
     #page {
@@ -131,7 +143,7 @@ $(document).ready(function(){
 
     #page > header {
         grid-area: head;
-        background-color: #C8DAF2;
+        
 
     }
 
@@ -155,7 +167,7 @@ $(document).ready(function(){
 
     #page > footer {
         grid-area: foot;
-        background-color: #C8DAF2;
+       
 
     }
 

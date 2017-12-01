@@ -7,15 +7,15 @@ public class RecentGameRecordDTO {
 
 	// 선수와 매칭을 위해 필요한 변수
 	private String playerName;
-	private Double playerNum;
+	private String playerNum;
 
 	private String gameDate, versus;
 	
-	private Double avg, ab, r, h, twob, threeb, hr, rbi, sb, cs, bb, hbp, so, gdp;
+	private String avg, ab, r, h, twob, threeb, hr, rbi, sb, cs, bb, hbp, so, gdp;
 	
 	private String result;
-	private Double era, tbf;
+	private String era, tbf;
 	private String ip;
-	private Double er;
+	private String er;
 	
 }

@@ -17,8 +17,10 @@
     <main1>
        <div class="menu1"><h1>btn</h1></div>
         <h3>팀 기록</h3>
-        <div class = teamrecord id="teamrecord">
+        <div class = teamrecord >
         
+        	<table id="teamrecord">
+        	</table>
         </div>
    </main1>
    
@@ -33,10 +35,21 @@
 
     
     <main3><h3>선수</h3>
-	<div class="div" id="teamplayer">
-				<ul>
-					
-				</ul>
+	<div class="div" >
+		
+		<table id="teamplayer"> 
+	
+		<!--페이지 처리  -->	
+		<ul class ="pagination">
+			<input type = 'hidden' name = 'page' value =${pageMaker.cri.perPageNum} >
+			<input type = 'hidden' name = 'perPageNum' value =${pageMaker.cri.perPageNum} >
+		</ul>
+				
+			
+		</table>
+		
+		
+	
     </div>
     
     </main3>
@@ -71,7 +84,7 @@
         $(".menu1").hide();
     })
 
-
+	
 
 </script>
 
@@ -104,10 +117,12 @@ $(document).ready(function(){
 	
 	console.log(teamname);
 	
+	
+	
 	function shownews() {
 		 var str = "";
 		 var url = "/baseball/teamdetail/"+ teamname +"";
-		 console.log(url);
+		 
 		
 		 $.getJSON(url,function(arr){
 		 
@@ -115,7 +130,7 @@ $(document).ready(function(){
 								
 				str += "<li><a href='http://sports.news.naver.com/"+ arr[i].url +"' >"+arr[i].title +"</a></li>";
 				$("#teamnews").html(str);
-				console.log(str);
+		
 			}
 		 });
 	
@@ -127,12 +142,11 @@ $(document).ready(function(){
 		 var str = "";
 		 var url = "/baseball/teamrecord/"+teamname+"";
 		
-		 console.log(url); 	
+		
 		 
 		 $.getJSON(url,function(arr){
 
-			 console.log(arr); 	
-			 
+					 
 		 	 str +="<tr>"
 		 	 +"<th><h3>팀이름</h3></th>"
 		 	+"<th><h3>WAR</h3></th>"
@@ -195,22 +209,39 @@ $(document).ready(function(){
 	function showplayer() {
 		
 		 var str = "";
-		 var url = "/baseball/teamplayer/"+teamname+"";
+		 var url = "/baseball/playerdetail/"+teamname+"";
 		
 		 console.log(url); 	
 		 
 		 $.getJSON(url,function(arr){
-
 			 
-				for(var i = 0; i < arr.length; i++){
-									
-					str += "<li>"+arr[i].playerNum + arr[i].playerName + arr[i].teamName + arr[i].position + arr[i].birthday + arr[i].hnW + + arr[i].school + "</li>";
-					$("#teamplayer").html(str);
-					
-				}
+			 console.log(arr); 
+					 
+				 	 str +="<tr>"
+				 	 +"<th><h3>선수명</h3></th>"
+					 +"<th><h3>포지션</h3></th>"
+				
+					 
+					 +"</tr>"
+			 
+			
+					 for(var i = 0; i < arr.length; i++){			
+					str += "<tr>" 
+							+"<td><h3>"+"<a href =/resources/playerdetail.html?playername="+arr[i].playerName+">"+arr[i].playerName +"</a>"+"</h3></td>"
+							
+							+"<td><h3>"+arr[i].position +"</h3></td>"
+						
+							+"</tr>"
+					 }
+			
+		 	 $('#teamplayer').html(str);
+		 	 	
 			 });
 	
 	}showplayer();
+	
+	
+	
 });
 </script>
 

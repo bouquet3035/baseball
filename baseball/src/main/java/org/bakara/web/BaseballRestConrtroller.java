@@ -2,12 +2,14 @@ package org.bakara.web;
 
 import java.util.List;
 
+import org.bakara.dto.BasicYearRecordDTO;
 import org.bakara.dto.PlayScheduleDTO;
 import org.bakara.dto.TeamNewsDTO;
 import org.bakara.dto.TeamPlayerDTO;
 import org.bakara.dto.TeamRankDTO;
 import org.bakara.dto.TeamRecordDTO;
 import org.bakara.service.PlayScheduleService;
+import org.bakara.service.PlayerDetailService;
 import org.bakara.service.TeamNewsService;
 import org.bakara.service.TeamPlayerService;
 import org.bakara.service.TeamRankService;
@@ -30,7 +32,14 @@ public class BaseballRestConrtroller {
 	@Autowired private TeamRankService RankService;
 	@Autowired private TeamRecordService RecordService;
 	@Autowired private TeamPlayerService PlayerService;
+	@Autowired private PlayerDetailService playerdetailService;
 	@Autowired private PlayScheduleService PlayScheduleService; 
+	
+	@GetMapping("/playerdetail/{teamname}")
+	public List<BasicYearRecordDTO> playerdetail(@PathVariable("teamname") String teamname){
+		
+		return PlayerService.selectBasicYearRecord(teamname) ; 
+	}
 
 	@GetMapping("/teamdetail/{teamname}")
 	public List<TeamNewsDTO> getNews(@PathVariable("teamname") String teamname){
@@ -44,6 +53,7 @@ public class BaseballRestConrtroller {
 		return RankService.teamRank() ; 
 		
 	}
+	
 	
 
 	@GetMapping("/teamplayer/{teamname}")
@@ -67,5 +77,28 @@ public class BaseballRestConrtroller {
 		return PlayScheduleService.playschedule() ; 
 
 	}
+
+	@GetMapping("/playerimg/{playername}")
+	public TeamPlayerDTO playerimg(@PathVariable("playername") String playername) {
+			
+		return playerdetailService.playerdetail(playername) ; 
+
+	}
+	
+	@GetMapping("/profile/{playername}")
+	public TeamPlayerDTO profile(@PathVariable("playername") String playername) {
+			
+		return playerdetailService.playerdetail(playername) ; 
+
+	}
+	
+	@GetMapping("/record/{playername}")
+	public BasicYearRecordDTO RecordTaza(@PathVariable("playername") String playername) {
+			
+		return playerdetailService.RecordTaza(playername) ; 
+
+	}
+	
+	
 
 }
